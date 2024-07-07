@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value Checker</title>
+</head>
+<body>
+    <input type="number" id="value" placeholder="Enter a value">
+    <button onclick="checkValue()">Check Value</button>
+    <p id="result"></p>
+
+    <script>
+        function checkValue() {
+            // احصل على القيمة المدخلة
+            const value = document.getElementById('value').value;
+            const targetValue = 100; // القيمة المرجعية للمقارنة
+
+            // تحقق من القيمة المدخلة
+            if (value < targetValue) {
+                document.getElementById('result').innerText = `The value ${value} is less than ${targetValue}.`;
+            } else if (value > targetValue) {
+                document.getElementById('result').innerText = `The value ${value} is greater than ${targetValue}.`;
+            } else {
+                document.getElementById('result').innerText = `The value ${value} is equal to ${targetValue}.`;
+            }
+        }
+    </script>
+</body>
+</html>

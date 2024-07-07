@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head class="crypt-dark">
+    <meta charset="UTF-8">
+    <title>CurrenTrader | Trading</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/ui.css">
+    <link rel="stylesheet" href="css/my-style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <!-- Step 1 - Include the fusioncharts core library -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <!-- Step 2 - Include the fusion theme -->
+    <script type="text/javascript"
+        src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+
+</head>
+
+<body class="crypt-dark">
+    <header>
+        <div class="container-full-width">
+            <div class="crypt-header">
+                <div class="row">
+                    <div class="col-xl-7 col-lg-6 col-md-4 col-sm-10" style="padding: 0;">
+                        <div class="row">
+                            <div class="col-xs-2 col-xl-5 col-lg-5 col-sm-3" style="padding: 0; margin: 0;">
+                                <div class="crypt-logo"><img src="images/logo.png" alt=""></div>
+                            </div>
+                            <div class="balance-container balance-container-one ">
+                                <div class="avail-balance one">
+                                    <h4>Free Margin</h4>
+                                    <p class="avail-bal">0000 USD</p>
+                                </div>
+                                <div class="equity-balance">
+                                    <h4>Equity</h4>
+                                    <p class="equity-bal">0000 USD</p>
+                                </div>
+                                <div class="main-balance">
+                                    <h4>Balance</h4>
+                                    <p class="main-bal">0000 USD</p>
+                                </div>
+                            </div>
+
+
+
+                            <!--  <div class="col-xs-2">
+                                <div class="crypt-mega-dropdown-menu"> <a href=""
+                                        class="crypt-mega-dropdown-toggle">BTC/ETH <i
+                                            class="pe-7s-angle-down-circle"></i></a>
+                                    <div class="crypt-mega-dropdown-menu-block">
+                                        <div class="crypt-market-status">
+                                            <div>
+                                                <div class="tab-content">
+                                                    <div role="tabpanel" class="tab-pane active">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Coin</th>
+                                                                    <th scope="col">Price</th>
+                                                                    <th scope="col">Volume</th>
+                                                                    <th scope="col">Change</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row">BTC</th>
+                                                                    <td class="crypt-down">0.000056</td>
+                                                                    <td>5.3424984</td>
+                                                                    <td class="crypt-down"><b>-5.4%</b></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">LTC</th>
+                                                                    <td>0.0000564</td>
+                                                                    <td>6.6768876</td>
+                                                                    <td>-6.7%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">ETH</th>
+                                                                    <td>0.0000234</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td class="crypt-down">-5.6%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">XMR</th>
+                                                                    <td>0.0000567</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td>-5.6%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">DOGE</th>
+                                                                    <td class="crypt-up">0.0000234</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td class="crypt-up">-9.6%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">XMR</th>
+                                                                    <td>0.0000567</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td>-5.6%</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div role="tabpanel" class="tab-pane">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Coin</th>
+                                                                    <th scope="col">Price</th>
+                                                                    <th scope="col">Volume</th>
+                                                                    <th scope="col">Change</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row">BTC</th>
+                                                                    <td class="crypt-down">0.000056</td>
+                                                                    <td>5.3424984</td>
+                                                                    <td class="crypt-down"><b>-5.4%</b></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">LTC</th>
+                                                                    <td>0.0000564</td>
+                                                                    <td>6.6768876</td>
+                                                                    <td>-6.7%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">DOGE</th>
+                                                                    <td class="crypt-up">0.0000234</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td class="crypt-up">-9.6%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">XMR</th>
+                                                                    <td>0.0000567</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td>-5.6%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">DOGE</th>
+                                                                    <td class="crypt-up">0.0000234</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td class="crypt-up">-9.6%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">XMR</th>
+                                                                    <td>0.0000567</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td>-5.6%</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div role="tabpanel" class="tab-pane">
+                                                        <table class="table table-striped">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th scope="col">Coin</th>
+                                                                    <th scope="col">Price</th>
+                                                                    <th scope="col">Volume</th>
+                                                                    <th scope="col">Change</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th scope="row">BTC</th>
+                                                                    <td class="crypt-down">0.000056</td>
+                                                                    <td>5.3424984</td>
+                                                                    <td class="crypt-down"><b>-5.4%</b></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">DOGE</th>
+                                                                    <td class="crypt-up">0.0000234</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td class="crypt-up">-9.6%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">XMR</th>
+                                                                    <td>0.0000567</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td>-5.6%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">DOGE</th>
+                                                                    <td class="crypt-up">0.0000234</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td class="crypt-up">-9.6%</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">XMR</th>
+                                                                    <td>0.0000567</td>
+                                                                    <td>4.3456600</td>
+                                                                    <td>-5.6%</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> 
+
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-6 col-md-8 d-none d-md-block d-lg-block">
+                        <ul class="crypt-heading-menu fright">
+                            <li><a href="/trading">Trading</a></li>
+                            <li><a href="/market-overview">Overview</a></li>
+                            <li><a href="/marketcap">Market Cap</a></li>
+                            <li><a href="/withdrawl">Account</a></li>
+                            <li class="crypt-box-menu menu-red"><a href="/register">Logout</a></li>
+                            <!-- <li class="crypt-box-menu menu-green"><a href="/login">login</a></li> -->
+                        </ul>
+                    </div><i class="menu-toggle pe-7s-menu d-xs-block d-sm-block d-md-none d-sm-none"></i>
+                </div>
+            </div>
+        </div>
+        <div class="crypt-mobile-menu">
+            <ul class="crypt-heading-menu">
+                <li class="active"><a href="">Trading</a></li>
+                <li><a href="">Market Cap</a></li>
+                <li><a href="">Exchange</a></li>
+                <li><a href="">Tools</a></li>
+                <li class="crypt-box-menu menu-red"><a href="">Logout</a></li>
+                <!-- <li class="crypt-box-menu menu-green"><a href="">login</a></li> -->
+            </ul>
+            <div class="crypt-gross-market-cap">
+                <h5>$34.795.90 <span class="crypt-up pl-2">+3.435 %</span></h5>
+                <h6>0.7925.90 BTC <span class="crypt-down pl-2">+7.435 %</span></h6>
+            </div>
+        </div>
+    </header>
+    <div class="container-fluid">
+        <div class="row sm-gutters">
+            <div class="col-md-6 col-lg-6 col-xl-3 col-xxl-2" id="fk-trade">
+                <div class="crypt-market-status mt-4">
+                    <div>
+                        <ul class="nav nav-tabs" id="crypt-tab">
+                            <li role="presentation"><a href="#forex" class="active" data-toggle="tab">Tradind</a></li>
+                        </ul>
+                        <div class="tab-content crypt-tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="forex">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Asset</th>
+                                            <th scope="col">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="crypt-table-hover">
+                                        <tr class="eur-usd coins" >
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/USD</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="exchange-rate">1.08401</span></td>
+                                            <td> <span class="d-block" >0.0000</span> <b></b>
+                                            </td>
+                                        </tr>
+                                        <tr class="aud-usd coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"src="images/star.svg" width="15">AUD/USD</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="audusd">0.67491</span></td>
+                                            <td> <span class="d-block">0.0000</span> <b>0%</b>
+                                            </td>
+                                        </tr>
+                                        <tr class="gbp-usd coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15">GBP/USD</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="gbpusd">1.28149</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span>0%</span> </td>
+                                        </tr>
+                                        <tr class="eur-gbp coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/GBP</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05">0.0000</span></td>
+                                            <td> <span class="d-block">0.0000</span> <b>0%</b>
+                                            </td>
+                                        </tr>
+                                        <tr class="usd-jpy coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> USD/JPY</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="usdjpy">160.829</span></td>
+                                            <td> <span class="d-block">0.0000</span> <b>0%</b>
+                                            </td>
+                                        </tr>
+                                        <tr class="usd-cad coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> USD/CAD</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="usdcad">1.36421</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span>0%</span> </td>
+                                        </tr>
+                                        <tr class="usd-inr coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> USD/INR</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="usdinr">83.4773</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="usd-zar coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> USD/ZAR</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="usdzar">19.7388</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="EURPHP coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/PHP </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="EURPHP">63.43605</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="EURPLN coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/PLN </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="EURPLN">4.2872</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="EURRON coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/RON </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="EURRON">4.97794</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="EURRUB coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/RUB </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="EURRUB">95.36951</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="EURSEK coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/SEK </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="EURSEK">11.3656</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="EURSGD coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/SGD </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="EURSGD">1.46269</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="EURTHB coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/THB </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="EURTHB">39.49954</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="EURTRY coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/TRY </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="EURTRY">35.44277</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="EURXAG coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/XAG </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="EURXAG">0.0347524</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="EURXAU coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> EUR/XAU </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="EURXAU">0.0004535</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        
+                                        <tr class="GBPAED coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/AED </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPAED">4.67207</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPAUD coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/AUD </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPAUD">1.89896</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPBRL coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/BRL </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPBRL">6.95338</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPCAD coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/CAD </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPCAD">1.74832</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPCHF coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/CHF </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPCHF">1.14813</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPCZK coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15">GBP/CZK </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPCZK">30.061</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPDKK coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15">GBP/DKK </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPDKK">8.8522</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPEUR coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/EUR </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPEUR">1.1822986</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPHKD coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/HKD </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPHKD">10.0385</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPHUF coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/HUF </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPHUF">464.20332</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPINR coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/INR </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPINR">106.12153</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPJPY coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/JPY </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPJPY">206.086</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPKRW coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/KRW </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPKRW">1757.85</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPMXN coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/MXN </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPMXN">23.4822</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPMYR coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/MYR </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPMYR">6.0326391</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPNOK coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/NOK </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPNOK">13.52064</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                        <tr class="GBPNZD coins">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GBP/NZD </td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05" id="GBPNZD">2.0856</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span><b>0%</b></span> </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="stocks">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Asset</th>
+                                            <th scope="col">Price</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                </table>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="indices">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Asset</th>
+                                            <th scope="col">Price</th>
+                                        </tr>
+                                    </thead>
+                                    
+                                  
+                                </table>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="comm">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Asset</th>
+                                            <th scope="col">Price</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="gold">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> GOLD</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05">0.0000</span></td>
+                                            <td> <span class="d-block">0.0000</span> <b>0%</b>
+                                            </td>
+                                        </tr>
+                                        <tr class="silver">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> SILVER</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05">0.0000</span></td>
+                                            <td> <span class="d-block">0.0000</span> <span>0%</span> </td>
+                                        </tr>
+                                        <tr class="oil">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> CRUDE OIL</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05">0.0000</span></td>
+                                            <td> <span class="d-block">0.0000</span> <b>0%</b>
+                                            </td>
+                                        </tr>
+                                        <tr class="gas">
+                                            <td class="align-middle"><img class="crypt-star pr-1" alt="star"
+                                                    src="images/star.svg" width="15"> NATURAL GAS</td>
+                                            <td class="align-middle"><span class="pr-2" data-toggle="tooltip"
+                                                    data-placement="right" title="$ 0.05">0.0000</span></td>
+                                            <td> <span class="d-block">0.0000</span> <b>0%</b>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-6 col-xxl-8">
+                <div class="crypt-gross-market-cap mt-4">
+                    <div class="row">
+                        <div class="col-3 col-sm-6 col-md-6 col-lg-6">
+                            <div class="row">
+                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <p>Last Price</p>
+                                    <p id="last-price"></p>
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-6">
+                                    <p>Change</p>
+                                    <p id="main-change"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3 col-sm-2 col-md-3 col-lg-2">
+                            <p>High</p>
+                            <p id="main-high"></p>
+                        </div>
+                        <div class="col-3 col-sm-2 col-md-3 col-lg-2">
+                            <p>Low</p>
+                            <p id="main-low"></p>
+                        </div>
+                        <div class="col-3 col-sm-2 col-md-3 col-lg-2">
+                            <p>Volume 24Hr</p>
+                            <p id="main-volume"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-wrapper">
+                    <div class="btn-cont">
+                        <button class="chart-toggle hide"><span class="material-symbols-outlined">
+                                open_in_full
+                            </span></button>
+                    </div>
+                    <!-- <div id="crypt-candle-chart"></div> -->
+                    <div id="chart-container">
+                        <div class="chart-placeholder">
+                            <p>Select an asset/commodity to start trading</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- <div style="margin: 0 auto;">
+                    <p style="font-size: 20px;" id="close-spike"></p>
+                    <input type="text" id="spike">
+                    <button id="spike-btn" style="width: 90px;">Spike Chart</button>
+                </div>
+                 <div id="depthchart" class="depthchart h-40 crypt-dark-segment"></div> -->
+            </div>
+            <div class="col-md-6 col-lg-6 col-xl-3 col-xxl-2">
+                <div class="crypt-market-status mt-4 history-area">
+                    <div>
+                        <ul class="nav nav-tabs">
+                            <li role="presentation"><a href="#history" class="active" data-toggle="tab">history</a></li>
+                            <!-- <li role="presentation"><a href="#market-trading" data-toggle="tab">market trading</a></li> -->
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="history">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Time</th>
+                                            <th scope="col">Price</th>
+                                            <th scope="col">Volume</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="history-list">
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="market-trading">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Time</th>
+                                            <th scope="col">Amount</th>
+                                            <th scope="col">Volume</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>22:35:59</td>
+                                            <td>0.0000564</td>
+                                            <td>6.6768876</td>
+                                        </tr>
+                                        <tr>
+                                            <td>22:35:59</td>
+                                            <td class="crypt-down">0.000056</td>
+                                            <td>5.3424984</td>
+                                        </tr>
+                                        <tr>
+                                            <td>22:35:59</td>
+                                            <td class="crypt-up">0.0000234</td>
+                                            <td>4.3456600</td>
+                                        </tr>
+                                        <tr>
+                                            <td>22:35:59</td>
+                                            <td>0.0000234</td>
+                                            <td>4.3456600</td>
+                                        </tr>
+                                        <tr>
+                                            <td>22:35:59</td>
+                                            <td>0.0000567</td>
+                                            <td>4.3456600</td>
+                                        </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <tr>
+                    <div class="price-panel">
+                        <h3 class="big-pair-name"></h3>
+                        <div class="pair-details">
+                            <p class="big-pair-full"></p>
+                            <p class="alive-dot"></p>
+                        </div>
+                        <p class="major"></p>
+                        <div class="big-price-details">
+                            <p class="big-price">0.00000</p>
+                            <p class="big-currency">USD</p>
+                            <p class="big-change">0.00000</p>
+                            <p class="big-percent">(0.00%)</p>
+                        </div>
+                        <div class="ohlc">
+                            <p class="ohlc-item open-i">O <span>0.0000</span></p>
+                            <p class="ohlc-item high-i">H <span>0.0000</span></p>
+                            <p class="ohlc-item low-i">L <span>0.0000</span></p>
+                            <p class="ohlc-item close-i">C <span>0.0000</span></p>
+                        </div>
+                    </div>
+                </tr>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bottom-area">
+        <div class="row sm-gutters">
+            <div class="col-xl-5">
+                <div class="crypt-boxed-area">
+                    <h6 class="crypt-bg-head"><b class="crypt-up">BUY</b> / <b class="crypt-down">SELL</b></h6>
+                    <div class="balance-container-two balance-container col-xl-7 col-lg-7 col-sm-9">
+                        <div class="avail-balance one">
+                            <h4>Free Margin</h4>
+                            <p class="avail-bal">0000 USD</p>
+                        </div>
+                        <div class="equity-balance">
+                            <h4>Equity</h4>
+                            <p class="equity-bal">0000 USD</p>
+                        </div>
+                        <div class="main-balance">
+                            <h4>Balance</h4>
+                            <p class="main-bal">0000 USD</p>
+                        </div>
+                    </div>
+                    <div class="row no-gutters">
+                        <div class="col-md-6">
+                            <div class="crypt-buy-sell-form buy-form">
+                                <p>Buy <span class="cur crypt-up"></span> <span class="fright">Available: <b
+                                            class="avail-bal crypt-up"></b></span></p>
+                                <div class="crypt-buy">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> <span class="input-group-text">Buy
+                                                Price</span>
+                                        </div>
+                                        <input type="text" class="buy-price form-control  buy-sell-price" placeholder="0.000" readonly>
+                                        <div class="input-group-append"> <span class="cur input-group-text"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> <span class="input-group-text">Quantity</span>
+                                        </div>
+                                        <input type="number" class="buy-qty-input form-control">
+                                        <div class="input-group-append"> <span class="input-group-text"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> <span class="input-group-text">Total</span>
+                                        </div>
+                                        <input type="text" class="buy-total-input form-control" readonly>
+                                        <div class="input-group-append"> <span class="cur input-group-text"></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p> <span class="buy-comm-val fright"></span></p>
+                                    </div>
+                                    <div class="text-center mt-3 mb-3 crypt-up">
+                                        <p>Required Margin</p>
+                                        <h4 class="buy-final-val">0.0000 USD</h4>
+                                    </div>
+                                    <div class="menu-green"><button
+                                            class="crypt-button-green-full buy-btn">Buy</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="crypt-buy-sell-form sell-form">
+                                <p>Sell <span class="cur crypt-down"></span> <span class="fright">Available: <b
+                                            class="avail-bal crypt-down"></b></span></p>
+                                <div class="crypt-sell">
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> <span class="input-group-text">Sell
+                                                Price</span>
+                                        </div>
+                                        <input type="text" class="sell-price form-control  buy-sell-price" placeholder="0.000" readonly>
+                                        <div class="input-group-append"> <span class="cur input-group-text"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> <span class="input-group-text">Quantity</span>
+                                        </div>
+                                        <input type="number" class="sell-qty-input form-control">
+                                        <div class="input-group-append"> <span class="input-group-text"></span>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend"> <span class="input-group-text">Total</span>
+                                        </div>
+                                        <input type="text" class="sell-total-input form-control" readonly>
+                                        <div class="input-group-append"> <span class="cur input-group-text"></span>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p><span class="sell-comm-val fright"></span></p>
+                                    </div>
+                                    <div class="text-center mt-3 mb-3 crypt-down">
+                                        <p>Required Margin</p>
+                                        <h4 class="sell-final-val">0.0000 USD</h4>
+                                    </div>
+                                    <div><button class="crypt-button-red-full sell-btn">Sell</button></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7">
+                <div>
+                    <div class="crypt-market-status">
+                        <div>
+                            <ul class="nav nav-tabs">
+                                <li role="presentation"><a href="#active-orders" class="active" data-toggle="tab">Active
+                                        Orders</a></li>
+                                <li role="presentation"><a href="#closed-orders" data-toggle="tab">Closed Orders</a>
+                                </li>
+                                <!-- <li role="presentation"><a href="#balance" data-toggle="tab">Balance</a></li> -->
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="active-orders">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Time</th>
+                                                <th scope="col">Buy/sell</th>
+                                                <th class="place-cur" scope="col">Price</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Unrealised P/L</th>
+                                                <th scope="col">Operation</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="active-orders-panel">
+                                            <!-- <tr id="open-orders-panel"></tr> -->
+                                            <!-- <tr>
+                                                <th>9:34:00 PM</th>
+                                                <td class="crypt-up">Buy</td>
+                                                <td>0.00987</td>
+                                                <td>1000</td>
+                                                <td class="crypt-up unreal-pl">0.000456</td>
+                                                <td class="close-trade-cont"><button id="close-trade-btn">close trade</button></td>
+                                            </tr>
+
+                                             <tr>
+                                                    <th>today</th>
+                                                    <td class="crypt-up">second</td>
+                                                    <td class="crypt-up">78888</td>
+                                                    <td class="crypt-up">Hello</td>
+                                                    <td class="crypt-up">okay</td>
+                                                    <td>23</td>
+                                                </tr> -->
+
+                                        </tbody>
+                                    </table>
+                                    <div class="no-orders text-center order-area"><img src="images/empty.png"
+                                            alt="no-orders">
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="closed-orders">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Time</th>
+                                                <th scope="col">Buy/sell</th>
+                                                <th class="place-cur" scope="col">Price</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Profit/Loss</th>
+                                                <th scope="col">Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="closed-orders-panel">
+
+                                        </tbody>
+                                    </table>
+                                    <div class="no-orders text-center"><img src="images/empty.png" alt="no-orders">
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="balance">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Currency</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Volume</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>BTC</th>
+                                                <td>0.0000564</td>
+                                                <td>6.6768876</td>
+                                            </tr>
+                                            <tr>
+                                                <th>ETC</th>
+                                                <td>0.000056</td>
+                                                <td>5.3424984</td>
+                                            </tr>
+                                            <tr>
+                                                <th>LTC</th>
+                                                <td>0.0000234</td>
+                                                <td>4.3456600</td>
+                                            </tr>
+                                            <tr>
+                                                <th>XMR</th>
+                                                <td>0.0000234</td>
+                                                <td>4.3456600</td>
+                                            </tr>
+                                            <tr>
+                                                <th>BIT</th>
+                                                <td>0.0000567</td>
+                                                <td>4.3456600</td>
+                                            </tr>
+                                            <tr>
+                                                <th>EGF</th>
+                                                <td>0.0000234</td>
+                                                <td>4.3456600</td>
+                                            </tr>
+                                            <tr>
+                                                <th>EER</th>
+                                                <td>0.0000567</td>
+                                                <td>4.3456600</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="buy-sell-modal hide">
+        <!-- <p>This is a modal</p> -->
+        <div class="crypt-buy-sell-form buy-form modal-form hide">
+            <p>Buy <span class="cur crypt-up"></span> <span class="fright">Available: <b
+                        class="avail-bal crypt-up"></b></span>
+            </p>
+            <div class="crypt-buy">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"> <span class="input-group-text">Price (USD)</span>
+                    </div>
+                    <input type="text" class="buy-price form-control final-price" placeholder="0.000" readonly>
+                    <!-- <div class="input-group-append"> <span class="cur input-group-text"></span>
+                    </div> -->
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend"> <span class="input-group-text">Quantity</span>
+                    </div>
+                    <input type="number" class="buy-qty-input form-control final-qty" placeholder="0.000" readonly>
+                    <!-- <div class="input-group-append"> <span class="input-group-text"></span>
+                    </div> -->
+                </div>
+                <div>
+                    <!-- <p>Fee: <span class="buy-comm-val fright">100%x0.2=0.02</span></p> -->
+                </div>
+                <div class="text-center mt-3 mb-3 crypt-up">
+                    <p>CONFIRM PURCHASE</p>
+                    <h4 class="final-purchase">0.0000 USD</h4>
+                </div>
+                <div class="menu-green"><button class="buy-sell-btn"></button>
+                </div>
+                <div class="menu-gray"><button class="crypt-button-green-full cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div class="buy-sell-loading hide">
+            <div class="loading-cont">
+                <p>Loading...</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+
+    </footer>
+    <!-- <script src="./js/coins.js"></script> -->
+	<script src="./js/go.to.login.js"></script>
+    <script src="./js/trading.js"></script>
+    <script src="amc/core.js"></script>
+    <script src="amc/charts.js"></script>
+    <script src="amc/dark.js"></script>
+    <script src="amc/animated.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/amc.js"></script> -->
+    <script src="js/script.js"></script>
+    <!-- <script src="https://s3.tradingview.com/tv.js"></script> -->
+    <!-- <script>
+       async function fetchExchangeRate() {
+            const apiKey = 'U4FdnLVqtG1v7je2ugTy'; // مفتاح API الخاص بك
+            const url = `https://marketdata.tradermade.com/api/v1/live?currency=EURUSD,GBPUSD,USDJPY,UK100,USDCAD,AEDEUR,EURPHP,EURPLN,EURRON,EURRUB,EURSEK,EURSGD,EURTHB,USDINR,EURTRY,EURTWD,EURXAG,EURXAU,EURZAR,GBPAED,GBPAUD,GBPBRL,GBPCAD,GBPCHF,USDZAR,GBPCZK,GBPDKK,GBPEUR,GBPHKD,GBPHUF,GBPINR,GBPJPY,GBPKRW,GBPMXN,GBPMYR,GBPNOK,GBPNZD,BTCUSDT&api_key=${apiKey}`;
+            
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const data = await response.json();
+               const exchangeRate = data.quotes[0].ask;
+                document.getElementById('exchange-rate').innerText = `${exchangeRate}`;
+                
+                const audusd = data.quotes[1].ask;
+                document.getElementById('audusd').innerText = `${audusd}`;
+                
+                const gbpusd = data.quotes[2].ask;
+                document.getElementById('gbpusd').innerText = `${gbpusd}`;
+                
+                const usdjpy = data.quotes[2].ask;
+                document.getElementById('usdjpy').innerText = `${usdjpy}`;
+                
+                const usdcad = data.quotes[4].ask;
+                document.getElementById('usdcad').innerText = `${usdcad}`;
+                
+                const usdinr = data.quotes[5].ask;
+                document.getElementById('usdinr').innerText = `${usdinr}`;
+                
+                const usdzar = data.quotes[6].ask;
+                document.getElementById('usdzar').innerText = `${usdzar}`;
+                
+                const EURPHP = data.quotes[7].ask;
+                document.getElementById('EURPHP').innerText = `${EURPHP}`;
+                
+                const EURPLN = data.quotes[8].ask;
+                document.getElementById('EURPLN').innerText = `${EURPLN}`;
+                
+                const EURRON = data.quotes[9].ask;
+                document.getElementById('EURRON').innerText = `${EURRON}`;
+                
+                const EURRUB = data.quotes[10].ask;
+                document.getElementById('EURRUB').innerText = `${EURRUB}`;
+
+                const EURSEK = data.quotes[11].ask;
+                document.getElementById('EURSEK').innerText = `${EURSEK}`;
+                
+                const EURSGD = data.quotes[12].ask;
+                document.getElementById('EURSGD').innerText = `${EURSGD}`;
+                
+                const EURTHB = data.quotes[13].ask;
+                document.getElementById('EURTHB').innerText = `${EURTHB}`;
+                
+                const EURTRY = data.quotes[14].ask;
+                document.getElementById('EURTRY').innerText = `${EURTRY}`;
+                
+                const EURXAG = data.quotes[16].ask;
+                document.getElementById('EURXAG').innerText = `${EURXAG}`;
+                
+                const EURXAU = data.quotes[19].ask;
+                document.getElementById('EURXAU').innerText = `${EURXAU}`;
+                
+                const GBPAED = data.quotes[18].ask;
+                document.getElementById('GBPAED').innerText = `${GBPAED}`;
+                
+                const GBPAUD = data.quotes[19].ask;
+                document.getElementById('GBPAUD').innerText = `${GBPAUD}`;
+                
+                const GBPBRL = data.quotes[20].ask;
+                document.getElementById('GBPBRL').innerText = `${GBPBRL}`;
+                
+                const GBPCAD = data.quotes[21].ask;
+                document.getElementById('GBPCAD').innerText = `${GBPCAD}`;
+                
+                const GBPCHF = data.quotes[22].ask;
+                document.getElementById('GBPCHF').innerText = `${GBPCHF}`;
+                
+                const GBPCZK = data.quotes[24].ask;
+                document.getElementById('GBPCZK').innerText = `${GBPCZK}`;
+                
+                const GBPDKK = data.quotes[25].ask;
+                document.getElementById('GBPDKK').innerText = `${GBPDKK}`;
+                
+                const GBPEUR = data.quotes[26].ask;
+                document.getElementById('GBPEUR').innerText = `${GBPEUR}`;
+                
+                const GBPHKD = data.quotes[27].ask;
+                document.getElementById('GBPHKD').innerText = `${GBPHKD}`;
+                
+                const GBPHUF = data.quotes[28].ask;
+                document.getElementById('GBPHUF').innerText = `${GBPHUF}`;
+                
+                const GBPINR = data.quotes[29].ask;
+                document.getElementById('GBPINR').innerText = `${GBPINR}`;
+                
+                const GBPJPY = data.quotes[30].ask;
+                document.getElementById('GBPJPY').innerText = `${GBPJPY}`;
+                
+                const GBPKRW = data.quotes[31].ask;
+                document.getElementById('GBPKRW').innerText = `${GBPKRW}`;
+                
+                const GBPMXN = data.quotes[32].ask;
+                document.getElementById('GBPMXN').innerText = `${GBPMXN}`;
+                
+                const GBPMYR = data.quotes[33].ask;
+                document.getElementById('GBPMYR').innerText = `${GBPMYR}`;
+                
+                const GBPNOK = data.quotes[34].ask;
+                document.getElementById('GBPNOK').innerText = `${GBPNOK}`;
+                
+                const GBPNZD = data.quotes[35].ask;
+                document.getElementById('GBPNZD').innerText = `${GBPNZD}`;
+                
+                const BTCUSDT = data.quotes[36].ask;
+                document.getElementById('ZARUSD').innerText = `${ZARUSD}`;
+                
+
+            } catch (error) {
+                //console.error('Error fetching the exchange rate:', error);
+                document.getElementById('error-message').innerText = 'Error fetching the exchange rate';
+            }
+        }
+
+        // جلب سعر الصرف فور تحميل الصفحة
+        fetchExchangeRate();
+
+        // تحديث سعر الصرف كل 30 ثانية
+        setInterval(fetchExchangeRate, 30000 * 6);
+    </script> -->
+</body>
+
+</html>
