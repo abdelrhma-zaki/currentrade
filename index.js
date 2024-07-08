@@ -28,6 +28,6 @@ app.use("/api", apiRouter);
 const router = require("./back/router");
 app.use("/", router);
 
-app.listen(port, host, () => {
+app.listen(port, () => {
   console.log(`http://${host}:${port}`);
 });
