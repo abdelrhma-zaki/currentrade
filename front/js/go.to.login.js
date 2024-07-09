@@ -18,7 +18,6 @@ fetch("./api/token", {
 })
   .then((response) => {
     if (!response.ok) {
-      alert("a7a");
       window.location.href = "/login";
     }
     return response.json();
