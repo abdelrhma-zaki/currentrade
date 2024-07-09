@@ -25,7 +25,6 @@ dotenv.config();
 // // إجراء استعلام كمثال
 // module.exports = connection;
 // إغلاق الاتصال
-// connection.end();
 
 const mysql = require('mysql2');
 
@@ -43,6 +42,7 @@ connection.connect((err) => {
   }
   console.log('db connected');
 });
+connection.end();
 module.exports = connection;
 
 // تنفيذ استعلام بسيط
