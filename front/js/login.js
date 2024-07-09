@@ -2,7 +2,7 @@ const login = async () => {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  fetch(`/api/account/login`, {
+  fetch(`./api/account/login`, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
