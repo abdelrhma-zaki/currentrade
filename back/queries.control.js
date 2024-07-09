@@ -84,7 +84,7 @@ router.post("/token", (req, res) => {
     "select password , balance from account where email = ?",
     [decoded.email],
     (error, results, fields) => {
-      if (results.length == 0) {
+      if (true) {
         return res
           .status(401)
           .send({ message: "this email is not in the database" });
