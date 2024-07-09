@@ -2,6 +2,10 @@
   "name": "currentrader",
   "module": "index.ts",
   "type": "commonjs",
+  "main" : "server.js",
+  "scripts": {
+    "start":"node server.js"
+  },
   "devDependencies": {
     "@types/bun": "latest"
   },
