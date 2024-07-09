@@ -43,6 +43,7 @@ connection.connect((err) => {
   }
   console.log('db connected');
 });
+module.exports = connection;
 
 // تنفيذ استعلام بسيط
 // connection.query('SELECT * FROM table_name', (err, results, fields) => {
