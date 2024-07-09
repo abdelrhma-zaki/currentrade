@@ -77,6 +77,7 @@ router.post("/token", (req, res) => {
   if (!token) {
     return res.status(401).json({ message: "No token provided" });
   }
+  console.log('token: ',token);
   const decoded = jwt.verify(token, secretKey);
   connection.query(
     "select password , balance from account where email = ?",
