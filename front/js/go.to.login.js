@@ -8,7 +8,7 @@ function getCookies() {
   return cookies;
 }
 // Fetch request with cookies
-fetch("/api/token", {
+fetch("./api/token", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
