@@ -1,4 +1,5 @@
 const connection = require("./connection.js");
+console.log("api work");
 const jwt = require("jsonwebtoken");
 const express = require("express");
 const dotenv = require("dotenv");
