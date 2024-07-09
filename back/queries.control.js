@@ -47,7 +47,7 @@ router.post("/account/login", (req, res) => {
           [email, password]
         );
         res.cookie("token", token, { httpOnly: true });
-
+  connection.end();
         return res.json({ email });
 });
 
