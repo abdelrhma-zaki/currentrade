@@ -77,7 +77,7 @@ router.post("/token", (req, res) => {
   if (!token) {
     return res.status(401).json({ message: "No token provided" });
   }
-  console.log('token: ',token);
+  
   const decoded = jwt.verify(token, secretKey);
   connection.query(
     "select password , balance from account where email = ?",
@@ -89,8 +89,10 @@ router.post("/token", (req, res) => {
           .send({ message: "this email is not in the database" });
       } else {
         if (decoded.password === results[0].password) {
+          console.log('Tamam');
           return res.json({ message: "Done", balance: results[0].balance });
         } else {
+          console.log('M4 Tamam');
           return res.status(401).json({ message: "Invalid token" });
         }
       }
