@@ -46,7 +46,8 @@ router.post("/account/login", (req, res) => {
 
 router.post("/account/register", (req, res) => {
   const { email, password } = req.body;
-
+console.log("email :",email);
+console.log("password :",password);
   connection.query(
     "SELECT * FROM account WHERE email= ? ",
     [email],
