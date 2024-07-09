@@ -17,7 +17,7 @@ router.get(`/account/${process.env.api1}`, (req, res) => {
 });
 
 router.post("/account/login", (req, res) => {
-  // const { email, password } = req.body;
+  const { email, password } = req.body;
 
   // connection.query(
   //   "SELECT * FROM account WHERE email= ? ",
