@@ -42,7 +42,7 @@ connection.connect((err) => {
   }
   console.log('db connected');
 });
-connection.end();
+// connection.end();
 module.exports = connection;
 
 // تنفيذ استعلام بسيط
