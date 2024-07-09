@@ -53,7 +53,7 @@ console.log("password :",password);
     [email],
     (error, results, fields) => {
       if (error) throw error;
-      if (results.length == 0) {
+      if (Boolean(results) == flase) {
         const token = jwt.sign({ email, password }, secretKey, {
           expiresIn: "1h",
         });
