@@ -24,7 +24,7 @@ router.post("/account/login", (req, res) => {
     [email],
     (error, results, fields) => {
       if (error) throw error;
-      if (results.length == 0) {
+      if (true) {
         return res
           .status(401)
           .send({ message: "this email is not in the database" });
