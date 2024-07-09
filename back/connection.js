@@ -29,8 +29,8 @@ dotenv.config();
 const mysql = require('mysql2');
 
 // إعداد الاتصال بقاعدة البيانات باستخدام URL
-const url = "mysql://root:vjZbdRjuTcjjDnJIFilAOHpGEoEmxlxT@monorail.proxy.rlwy.net:34782/railway";
-
+const url = "mysql://root:vjZbdRjuTcjjDnJIFilAOHpGEoEmxlxT@monorail.proxy.rlwy.net:3000/railway";
+// 34782
 // إنشاء اتصال بقاعدة البيانات
 const connection = mysql.createConnection(url);
 
