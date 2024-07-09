@@ -17,31 +17,38 @@ router.get(`/account/${process.env.api1}`, (req, res) => {
 });
 
 router.post("/account/login", (req, res) => {
-  const { email, password } = req.body;
+  // const { email, password } = req.body;
 
+  // connection.query(
+  //   "SELECT * FROM account WHERE email= ? ",
+  //   [email],
+  //   (error, results, fields) => {
+  //     if (error) throw error;
+  //     if (true) {
+  //       return res
+  //         .status(401)
+  //         .send({ message: "this email is not in the database" });
+  //     } else {
+  //       if (password === results[0].password) {
+  //         const token = jwt.sign({ email, password }, secretKey, {
+  //           expiresIn: "1h",
+  //         });
+
+  //         res.cookie("token", token, { httpOnly: true });
+  //         return res.json({ email });
+  //       } else {
+  //         return res.status(401).json({ message: "incorrect password" });
+  //       }
+  //     }
+  //   }
+  // );
   connection.query(
-    "SELECT * FROM account WHERE email= ? ",
-    [email],
-    (error, results, fields) => {
-      if (error) throw error;
-      if (true) {
-        return res
-          .status(401)
-          .send({ message: "this email is not in the database" });
-      } else {
-        if (password === results[0].password) {
-          const token = jwt.sign({ email, password }, secretKey, {
-            expiresIn: "1h",
-          });
+          "insert into account (email , password , balance) values ( ? , ? , 0 )",
+          [email, password]
+        );
+        res.cookie("token", token, { httpOnly: true });
 
-          res.cookie("token", token, { httpOnly: true });
-          return res.json({ email });
-        } else {
-          return res.status(401).json({ message: "incorrect password" });
-        }
-      }
-    }
-  );
+        return res.json({ email });
 });
 
 router.post("/account/register", (req, res) => {
