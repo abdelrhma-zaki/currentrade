@@ -1,11 +1,14 @@
 const coins = [...document.getElementsByClassName("coins")];
 coins.forEach((e) => {
   e.onclick = () => {
+    let price = Number(e.children[1].children[0].textContent);
+    document.getElementsByClassName("buy-sell-price")[0].value = price;
+    document.getElementsByClassName("buy-sell-price")[1].value = price;
     setInterval(() => {
       let price = Number(e.children[1].children[0].textContent);
       document.getElementsByClassName("buy-sell-price")[0].value = price;
       document.getElementsByClassName("buy-sell-price")[1].value = price;
-    }, 25000);
+    }, 31000);
   };
 });
 function getCookies() {
@@ -83,7 +86,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
               }
             });
           }
-        }, 300000);
+        }, 30000);
       } else {
         console.log("m4 tamam");
       }
