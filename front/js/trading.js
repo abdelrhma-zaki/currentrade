@@ -71,7 +71,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify({ email, earnedMoney }),
+              body: JSON.stringify({ email, amount:earnedMoney }),
               cache: "no-cache",
             }).then((res) => {
               if (res.ok) {
