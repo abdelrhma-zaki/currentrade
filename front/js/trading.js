@@ -36,8 +36,9 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
       const oldPrice = Number(
         document.getElementsByClassName("buy-price form-control")[0].value
       );
-      const balance = data.balance;
+      const balance = Number(data.balance);
       const email = data.email;
+      alert("email : ", email, "balance : ", balance);
       if (quantity <= balance) {
         fetch("api/account/update-balance", {
           method: "POST",
@@ -48,7 +49,6 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
           cache: "no-cache",
         }).then((res) => {
           if (res.ok) {
-
             alert(`${minus}$ add to ${email}`);
           } else {
             alert("something went wrong");

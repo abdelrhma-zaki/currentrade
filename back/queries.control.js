@@ -87,7 +87,7 @@ router.post("/token", async (req, res) => {
       console.log("Tamam");
       return res.json({
         message: "Done",
-        email: account.email,
+        email: decoded.email,
         balance: account.balance,
       });
     } else {
