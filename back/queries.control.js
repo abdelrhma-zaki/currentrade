@@ -24,11 +24,15 @@ router.post("/account/login", async (req, res) => {
   try {
     const account = await Account.findOne({ email });
     if (!account) {
-      return res.status(401).json({ message: "this email is not in the database" });
+      return res
+        .status(401)
+        .json({ message: "this email is not in the database" });
     }
 
     if (password === account.password) {
-      const token = jwt.sign({ email, password }, secretKey, { expiresIn: "1h" });
+      const token = jwt.sign({ email, password }, secretKey, {
+        expiresIn: "1h",
+      });
       res.cookie("token", token, { httpOnly: true });
       return res.json({ email });
     } else {
@@ -47,7 +51,9 @@ router.post("/account/register", async (req, res) => {
   try {
     const existingAccount = await Account.findOne({ email });
     if (existingAccount) {
-      return res.status(401).json({ message: "this email is already in the database" });
+      return res
+        .status(401)
+        .json({ message: "this email is already in the database" });
     }
 
     const account = new Account({ email, password });
@@ -72,14 +78,20 @@ router.post("/token", async (req, res) => {
     const account = await Account.findOne({ email: decoded.email });
 
     if (!account) {
-      return res.status(401).json({ message: "this email is not in the database" });
+      return res
+        .status(401)
+        .json({ message: "this email is not in the database" });
     }
 
     if (decoded.password === account.password) {
-      console.log('Tamam');
-      return res.json({ message: "Done", balance: account.balance });
+      console.log("Tamam");
+      return res.json({
+        message: "Done",
+        email: account.email,
+        balance: account.balance,
+      });
     } else {
-      console.log('M4 Tamam');
+      console.log("M4 Tamam");
       return res.status(401).json({ message: "Invalid token" });
     }
   } catch (error) {
