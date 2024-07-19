@@ -38,14 +38,14 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
       );
       const balance = Number(data.balance);
       const email = data.email;
-      alert("email : ", email, "balance : ", balance);
+      alert(`email : ${email}`);
       if (quantity <= balance) {
         fetch("api/account/update-balance", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email, minus }),
+          body: JSON.stringify({ email, amount: minus }),
           cache: "no-cache",
         }).then((res) => {
           if (res.ok) {
@@ -65,17 +65,17 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
             window.alert("you made a mistake...");
           } else {
             window.alert("you made money...");
-            const earnedMoney = quantity + 0.9 * quantity;
+            const amount = quantity + 0.9 * quantity;
             fetch("api/account/update-balance", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify({ email, amount:earnedMoney }),
+              body: JSON.stringify({ email, amount }),
               cache: "no-cache",
             }).then((res) => {
               if (res.ok) {
-                alert(`${earnedMoney}$ add to ${email}`);
+                alert(`${amount}$ add to ${email}`);
               } else {
                 alert("something went wrong");
               }
