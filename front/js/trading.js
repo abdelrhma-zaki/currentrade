@@ -19,6 +19,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
   const quantity = Number(
     document.getElementsByClassName("buy-qty-input form-control")[0].value
   );
+  const minus = quantity * -1;
   fetch("/api/token", {
     method: "POST",
     headers: {
@@ -35,19 +36,52 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
         document.getElementsByClassName("buy-price form-control")[0].value
       );
       const balance = data.balance;
-      quantity <= balance
-        ? setTimeout(() => {
-            const newPrice = Number(
-              document.getElementsByClassName("buy-price form-control")[0].value
-            );
+      if (quantity <= balance) {
+        fetch("api/account/update-balance", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, minus }),
+          cache: "no-cache",
+        }).then((res) => {
+          if (res.ok) {
+            alert(`${minus}$ add to ${email}`);
+          } else {
+            alert("something went wrong");
+          }
+        });
+        setTimeout(() => {
+          const newPrice = Number(
+            document.getElementsByClassName("buy-price form-control")[0].value
+          );
 
-            oldPrice == newPrice
-              ? window.alert("nothing changed...")
-              : oldPrice > newPrice
-              ? window.alert("you made a mistake...")
-              : window.alert("you made money...");
-          }, 300000)
-        : console.log("m4 tamam");
+          if (oldPrice == newPrice) {
+            window.alert("nothing changed...");
+          } else if (oldPrice > newPrice) {
+            window.alert("you made a mistake...");
+          } else {
+            window.alert("you made money...");
+            const earnedMoney = quantity + 0.9 * quantity;
+            fetch("api/account/update-balance", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, earnedMoney }),
+              cache: "no-cache",
+            }).then((res) => {
+              if (res.ok) {
+                alert(`${earnedMoney}$ add to ${email}`);
+              } else {
+                alert("something went wrong");
+              }
+            });
+          }
+        }, 300000);
+      } else {
+        console.log("m4 tamam");
+      }
     });
 };
 
@@ -55,23 +89,6 @@ const coinsType = [];
 for (let i = 0; i < coins.length; i++) {
   coinsType.push(coins[i].children[0].textContent.trim());
 }
-// fetch(
-//   "https://marketdata.tradermade.com/api/v1/live?currency=EURUSD,AUDUSD,GBPUSD,USDJPY,UK100,USDCAD,USDINR,EURZAR,AEDEUR,EURPHP,EURPLN,EURRON,EURRUB,EURSEK,EURSGD,EURTHB,EURTRY,EURTWD,EURXAG,EURXAU,GBPAED,GBPAUD,GBPBRL,GBPCAD,GBPCHF,USDZAR,GBPCZK,GBPDKK,GBPEUR,GBPHKD,GBPHUF,GBPINR,GBPJPY,GBPKRW,GBPMXN,GBPMYR,GBPNOK,GBPNZD,BTCUSDT&api_key=a2sgXj4rk_CQh3-nosNU"
-// )
-//   .then((res) => {
-//     return res.json();
-//   })
-//   .then((data) => {
-//     let current;
-//     let index;
-//     for (let i = 0; i < data.quotes.length; i++) {
-//       current = `${data.quotes[i].base_currency}/${data.quotes[i].quote_currency}`;
-//       index = coinsType.indexOf(current) || -1;
-//       if (index == -1) continue;
-//       coins[index].children[1].children[0].textContent = data.quotes[i].ask;
-//     }
-//   });
-
 const rand = (number) => {
   let order = 1;
   while ((number / order).toFixed() > 0) {
