@@ -1,10 +1,50 @@
 const coins = [...document.getElementsByClassName("coins")];
 function vip() {
-  alert("Error!");
-
+  fetch("api/account/update-balance", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, amount: minus }),
+    cache: "no-cache",
+  }).then((res) => {
+    if (res.ok) {
+      alert(`opertation started and it will take 5min...`);
+    } else {
+      alert("something went wrong...");
+    }
+  });
   setTimeout(() => {
-    alert("Error!");
-  }, 30000);
+    const newPrice = Number(
+      document.getElementsByClassName("buy-price form-control")[0].value
+    );
+
+    if (oldPrice == newPrice) {
+      window.alert("Error !");
+      const amount = quantity;
+      fetch("api/account/update-balance", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, amount }),
+        cache: "no-cache",
+      });
+    } else if (oldPrice > newPrice) {
+      window.alert("Error !");
+    } else {
+      window.alert("Error !");
+      const amount = quantity + 0.9 * quantity;
+      fetch("api/account/update-balance", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, amount }),
+        cache: "no-cache",
+      });
+    }
+  }, 300000);
 }
 coins.forEach((e) => {
   e.onclick = () => {
