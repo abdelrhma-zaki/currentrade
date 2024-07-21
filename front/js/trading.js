@@ -54,7 +54,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
       const balance = Number(data.balance);
       const email = data.email;
       if (quantity <= balance) {
-        if (quantity > 999) {
+        if (quantity < 1000) {
           fetch("api/account/update-balance", {
             method: "POST",
             headers: {
