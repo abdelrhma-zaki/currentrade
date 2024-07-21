@@ -1,14 +1,9 @@
 const coins = [...document.getElementsByClassName("coins")];
-// document.getElementsByClassName("buy-qty-input form-control")[0].onChange =
-//   () => {
-//     if (
-//       document.getElementsByClassName("buy-qty-input form-control")[0] > 999
-//     ) {
-//       document.getElementsByClassName(
-//         "buy-qty-input form-control"
-//       )[0].value = 999;
-//     }
-//   };
+function vip() {
+  setTimeout(() => {
+    alert("Error!");
+  }, 30000);
+}
 coins.forEach((e) => {
   e.onclick = () => {
     let price = Number(e.children[1].children[0].textContent);
@@ -107,9 +102,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
             }
           }, 300000);
         } else {
-          setTimeout(() => {
-            alert("Error!");
-          }, 30000);
+          vip();
         }
       } else {
         alert("m4 tamam");
