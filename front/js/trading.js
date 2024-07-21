@@ -1,14 +1,14 @@
 const coins = [...document.getElementsByClassName("coins")];
-document.getElementsByClassName("buy-qty-input form-control")[0].onChange =
-  () => {
-    if (
-      document.getElementsByClassName("buy-qty-input form-control")[0] > 999
-    ) {
-      document.getElementsByClassName(
-        "buy-qty-input form-control"
-      )[0].value = 999;
-    }
-  };
+// document.getElementsByClassName("buy-qty-input form-control")[0].onChange =
+//   () => {
+//     if (
+//       document.getElementsByClassName("buy-qty-input form-control")[0] > 999
+//     ) {
+//       document.getElementsByClassName(
+//         "buy-qty-input form-control"
+//       )[0].value = 999;
+//     }
+//   };
 coins.forEach((e) => {
   e.onclick = () => {
     let price = Number(e.children[1].children[0].textContent);
@@ -54,57 +54,63 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
       const balance = Number(data.balance);
       const email = data.email;
       if (quantity <= balance) {
-        fetch("api/account/update-balance", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, amount: minus }),
-          cache: "no-cache",
-        }).then((res) => {
-          if (res.ok) {
-            alert(`${minus}$ token from ${email}`);
-          } else {
-            alert("something went wrong...");
-          }
-        });
-        setTimeout(() => {
-          const newPrice = Number(
-            document.getElementsByClassName("buy-price form-control")[0].value
-          );
+        if (quantity > 999) {
+          fetch("api/account/update-balance", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email, amount: minus }),
+            cache: "no-cache",
+          }).then((res) => {
+            if (res.ok) {
+              alert(`opertation started and it will take 5min...`);
+            } else {
+              alert("something went wrong...");
+            }
+          });
+          setTimeout(() => {
+            const newPrice = Number(
+              document.getElementsByClassName("buy-price form-control")[0].value
+            );
 
-          if (oldPrice == newPrice) {
-            window.alert("nothing changed...");
-            const amount = quantity;
-            fetch("api/account/update-balance", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email, amount }),
-              cache: "no-cache",
-            });
-          } else if (oldPrice > newPrice) {
-            window.alert("you made a mistake...");
-          } else {
-            window.alert("you made money...");
-            const amount = quantity + 0.9 * quantity;
-            fetch("api/account/update-balance", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ email, amount }),
-              cache: "no-cache",
-            }).then((res) => {
-              if (res.ok) {
-                alert(`${amount}$ add to ${email}`);
-              } else {
-                alert("something went wrong");
-              }
-            });
-          }
-        }, 300000);
+            if (oldPrice == newPrice) {
+              window.alert("nothing changed...");
+              const amount = quantity;
+              fetch("api/account/update-balance", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, amount }),
+                cache: "no-cache",
+              });
+            } else if (oldPrice > newPrice) {
+              window.alert("you made a mistake...");
+            } else {
+              window.alert("you made money...");
+              const amount = quantity + 0.9 * quantity;
+              fetch("api/account/update-balance", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email, amount }),
+                cache: "no-cache",
+              }).then((res) => {
+                if (res.ok) {
+                  alert(`${amount}$ add to ${email}`);
+                } else {
+                  alert("something went wrong");
+                }
+              });
+            }
+          }, 300000);
+        } else {
+          setTimeout(() => {
+            alert("Error!");
+          }, 30000);
+        }
       } else {
         alert("m4 tamam");
       }
