@@ -1,4 +1,14 @@
 const coins = [...document.getElementsByClassName("coins")];
+document.getElementsByClassName("buy-qty-input form-control")[0].onChange =
+  () => {
+    if (
+      document.getElementsByClassName("buy-qty-input form-control")[0] > 999
+    ) {
+      document.getElementsByClassName(
+        "buy-qty-input form-control"
+      )[0].value = 999;
+    }
+  };
 coins.forEach((e) => {
   e.onclick = () => {
     let price = Number(e.children[1].children[0].textContent);
@@ -73,7 +83,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
               },
               body: JSON.stringify({ email, amount }),
               cache: "no-cache",
-            })
+            });
           } else if (oldPrice > newPrice) {
             window.alert("you made a mistake...");
           } else {
