@@ -1,5 +1,7 @@
 const coins = [...document.getElementsByClassName("coins")];
 function vip() {
+  alert("Error!");
+
   setTimeout(() => {
     alert("Error!");
   }, 30000);
