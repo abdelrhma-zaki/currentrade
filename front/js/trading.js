@@ -8,7 +8,7 @@ coins.forEach((e) => {
       let price = Number(e.children[1].children[0].textContent);
       document.getElementsByClassName("buy-sell-price")[0].value = price;
       document.getElementsByClassName("buy-sell-price")[1].value = price;
-    }, 31000);
+    }, 2000);
   };
 });
 function getCookies() {
@@ -25,7 +25,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
     document.getElementsByClassName("buy-qty-input form-control")[0].value
   );
   const minus = quantity * -1;
-  console.log("minus :", minus);
+
   fetch("/api/token", {
     method: "POST",
     headers: {
@@ -43,7 +43,6 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
       );
       const balance = Number(data.balance);
       const email = data.email;
-      alert(`email : ${email}`);
       if (quantity <= balance) {
         fetch("api/account/update-balance", {
           method: "POST",
@@ -54,9 +53,9 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
           cache: "no-cache",
         }).then((res) => {
           if (res.ok) {
-            alert(`${minus}$ add to ${email}`);
+            alert(`${minus}$ token from ${email}`);
           } else {
-            alert("something went wrong");
+            alert("something went wrong...");
           }
         });
         setTimeout(() => {
@@ -88,7 +87,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
           }
         }, 30000);
       } else {
-        console.log("m4 tamam");
+        alert("m4 tamam");
       }
     });
 };
@@ -115,4 +114,4 @@ setInterval(() => {
       Number(coins[i].children[1].children[0].textContent)
     );
   }
-}, 30000);
+}, 10000);
