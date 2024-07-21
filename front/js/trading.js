@@ -65,6 +65,15 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
 
           if (oldPrice == newPrice) {
             window.alert("nothing changed...");
+            const amount = quantity;
+            fetch("api/account/update-balance", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, amount }),
+              cache: "no-cache",
+            })
           } else if (oldPrice > newPrice) {
             window.alert("you made a mistake...");
           } else {
@@ -85,7 +94,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
               }
             });
           }
-        }, 30000);
+        }, 300000);
       } else {
         alert("m4 tamam");
       }
