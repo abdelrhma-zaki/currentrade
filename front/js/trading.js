@@ -147,7 +147,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
             }
           }, 300000);
         } else {
-          vipBuy(oldPrice, quantity);
+          vipBuy(email, oldPrice, quantity);
         }
       } else {
         alert("m4 tamam");
@@ -209,7 +209,7 @@ document.getElementsByClassName("sell-btn")[0].onclick = async () => {
             }
           }, 300000);
         } else {
-          vipSell(oldPrice, quantity);
+          vipSell(email, oldPrice, quantity);
         }
       } else {
         alert("m4 tamam");
