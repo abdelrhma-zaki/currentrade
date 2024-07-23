@@ -32,6 +32,7 @@ function getCookies() {
 }
 //vip buy function
 function vipBuy(oldPrice, quantity) {
+  const minus = quantity * -1;
   money(minus);
   alert(`opertation started and it will take 5min...`);
   setTimeout(() => {
@@ -62,7 +63,8 @@ function vipBuy(oldPrice, quantity) {
 }
 //vip sell function
 function vipSell(oldPrice, quantity) {
-  money(minus);
+  const minus = quantity * -1;
+  money(quantity);
   alert(`opertation started and it will take 5min...`);
   setTimeout(() => {
     const newPrice = Number(
