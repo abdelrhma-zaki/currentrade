@@ -12,7 +12,7 @@ coins.forEach((e) => {
     }, 2000);
   };
 });
-const money = (amount) => {
+const money = (email, amount) => {
   fetch("api/account/update-balance", {
     method: "POST",
     headers: {
@@ -31,9 +31,9 @@ function getCookies() {
   return cookies;
 }
 //vip buy function
-function vipBuy(oldPrice, quantity) {
+function vipBuy(email, oldPrice, quantity) {
   const minus = quantity * -1;
-  money(minus);
+  money(email, minus);
   alert(`opertation started and it will take 5min...`);
   setTimeout(() => {
     const newPrice = Number(
@@ -56,15 +56,15 @@ function vipBuy(oldPrice, quantity) {
     } else {
       window.alert("Error!");
       const plus = quantity + 0.9 * quantity;
-      money(plus);
+      money(email, amount)(plus);
       alert(`${plus}$ add to ${email}`);
     }
   }, 300000);
 }
 //vip sell function
-function vipSell(oldPrice, quantity) {
+function vipSell(email, oldPrice, quantity) {
   const minus = quantity * -1;
-  money(quantity);
+  money(email, quantity);
   alert(`opertation started and it will take 5min...`);
   setTimeout(() => {
     const newPrice = Number(
@@ -85,7 +85,7 @@ function vipSell(oldPrice, quantity) {
     } else if (oldPrice > newPrice) {
       window.alert("Error!");
       const plus = 0.9 * quantity;
-      money(plus);
+      money(email, plus);
       alert(`${plus}$ add to ${email}`);
     } else {
       window.alert("Error!");
@@ -119,7 +119,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
       const email = data.email;
       if (quantity <= balance) {
         if (quantity < 1000) {
-          money(minus);
+          money(email, minus);
           alert(`opertation started and it will take 5min...`);
           setTimeout(() => {
             const newPrice = Number(
@@ -142,7 +142,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
             } else {
               window.alert("you made money...");
               const plus = quantity + 0.9 * quantity;
-              money(plus);
+              money(email, plus);
               alert(`${plus}$ add to ${email}`);
             }
           }, 300000);
@@ -181,7 +181,7 @@ document.getElementsByClassName("sell-btn")[0].onclick = async () => {
       const email = data.email;
       if (quantity <= balance) {
         if (quantity < 1000) {
-          money(quantity);
+          money(email, quantity);
           alert(`opertation started and it will take 5min...`);
           setTimeout(() => {
             const newPrice = Number(
@@ -202,7 +202,7 @@ document.getElementsByClassName("sell-btn")[0].onclick = async () => {
             } else if (oldPrice > newPrice) {
               window.alert("you made money...");
               const plus = 0.9 * quantity;
-              money(plus);
+              money(email, plus);
               alert(`${plus}$ add to ${email}`);
             } else {
               window.alert("you made a mistake...");
