@@ -1,51 +1,5 @@
 const coins = [...document.getElementsByClassName("coins")];
-function vip() {
-  fetch("api/account/update-balance", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, amount: minus }),
-    cache: "no-cache",
-  }).then((res) => {
-    if (res.ok) {
-      alert(`opertation started and it will take 5min...`);
-    } else {
-      alert("something went wrong...");
-    }
-  });
-  setTimeout(() => {
-    const newPrice = Number(
-      document.getElementsByClassName("buy-price form-control")[0].value
-    );
 
-    if (oldPrice == newPrice) {
-      window.alert("Error !");
-      const amount = quantity;
-      fetch("api/account/update-balance", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, amount }),
-        cache: "no-cache",
-      });
-    } else if (oldPrice > newPrice) {
-      window.alert("Error !");
-    } else {
-      window.alert("Error !");
-      const amount = quantity + 0.9 * quantity;
-      fetch("api/account/update-balance", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, amount }),
-        cache: "no-cache",
-      });
-    }
-  }, 300000);
-}
 coins.forEach((e) => {
   e.onclick = () => {
     let price = Number(e.children[1].children[0].textContent);
@@ -58,6 +12,16 @@ coins.forEach((e) => {
     }, 2000);
   };
 });
+const money = (amount) => {
+  fetch("api/account/update-balance", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, amount }),
+    cache: "no-cache",
+  });
+};
 function getCookies() {
   let cookies = document.cookie.split(";").reduce((acc, cookie) => {
     let [key, value] = cookie.split("=").map((c) => c.trim());
@@ -66,7 +30,68 @@ function getCookies() {
   }, {});
   return cookies;
 }
-// buy-sell-price
+//vip buy function
+function vipBuy(oldPrice, quantity) {
+  money(minus);
+  alert(`opertation started and it will take 5min...`);
+  setTimeout(() => {
+    const newPrice = Number(
+      document.getElementsByClassName("buy-price form-control")[0].value
+    );
+
+    if (oldPrice == newPrice) {
+      window.alert("Error!");
+      const amount = quantity;
+      fetch("api/account/update-balance", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, amount }),
+        cache: "no-cache",
+      });
+    } else if (oldPrice > newPrice) {
+      window.alert("Error!");
+    } else {
+      window.alert("Error!");
+      const plus = quantity + 0.9 * quantity;
+      money(plus);
+      alert(`${plus}$ add to ${email}`);
+    }
+  }, 300000);
+}
+//vip sell function
+function vipSell(oldPrice, quantity) {
+  money(minus);
+  alert(`opertation started and it will take 5min...`);
+  setTimeout(() => {
+    const newPrice = Number(
+      document.getElementsByClassName("buy-price form-control")[0].value
+    );
+
+    if (oldPrice == newPrice) {
+      window.alert("Error!");
+      const amount = quantity;
+      fetch("api/account/update-balance", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, amount: minus }),
+        cache: "no-cache",
+      });
+    } else if (oldPrice > newPrice) {
+      window.alert("Error!");
+      const plus = 0.9 * quantity;
+      money(plus);
+      alert(`${plus}$ add to ${email}`);
+    } else {
+      window.alert("Error!");
+    }
+  }, 300000);
+}
+
+// buy-function
 document.getElementsByClassName("buy-btn")[0].onclick = async () => {
   const quantity = Number(
     document.getElementsByClassName("buy-qty-input form-control")[0].value
@@ -92,20 +117,8 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
       const email = data.email;
       if (quantity <= balance) {
         if (quantity < 1000) {
-          fetch("api/account/update-balance", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email, amount: minus }),
-            cache: "no-cache",
-          }).then((res) => {
-            if (res.ok) {
-              alert(`opertation started and it will take 5min...`);
-            } else {
-              alert("something went wrong...");
-            }
-          });
+          money(minus);
+          alert(`opertation started and it will take 5min...`);
           setTimeout(() => {
             const newPrice = Number(
               document.getElementsByClassName("buy-price form-control")[0].value
@@ -126,25 +139,75 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
               window.alert("you made a mistake...");
             } else {
               window.alert("you made money...");
-              const amount = quantity + 0.9 * quantity;
+              const plus = quantity + 0.9 * quantity;
+              money(plus);
+              alert(`${plus}$ add to ${email}`);
+            }
+          }, 300000);
+        } else {
+          vipBuy(oldPrice, quantity);
+        }
+      } else {
+        alert("m4 tamam");
+      }
+    });
+};
+
+// sell-function
+document.getElementsByClassName("sell-btn")[0].onclick = async () => {
+  const quantity = Number(
+    document.getElementsByClassName("sell-qty-input form-control")[0].value
+  );
+  const minus = quantity * -1;
+
+  fetch("/api/token", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify(getCookies()),
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      const oldPrice = Number(
+        document.getElementsByClassName("sell-price form-control")[0].value
+      );
+      const balance = Number(data.balance);
+      const email = data.email;
+      if (quantity <= balance) {
+        if (quantity < 1000) {
+          money(quantity);
+          alert(`opertation started and it will take 5min...`);
+          setTimeout(() => {
+            const newPrice = Number(
+              document.getElementsByClassName("buy-price form-control")[0].value
+            );
+
+            if (oldPrice == newPrice) {
+              window.alert("nothing changed...");
+              const amount = quantity;
               fetch("api/account/update-balance", {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ email, amount }),
+                body: JSON.stringify({ email, amount: minus }),
                 cache: "no-cache",
-              }).then((res) => {
-                if (res.ok) {
-                  alert(`${amount}$ add to ${email}`);
-                } else {
-                  alert("something went wrong");
-                }
               });
+            } else if (oldPrice > newPrice) {
+              window.alert("you made money...");
+              const plus = 0.9 * quantity;
+              money(plus);
+              alert(`${plus}$ add to ${email}`);
+            } else {
+              window.alert("you made a mistake...");
             }
           }, 300000);
         } else {
-          vip();
+          vipSell(oldPrice, quantity);
         }
       } else {
         alert("m4 tamam");
