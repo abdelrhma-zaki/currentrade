@@ -34,7 +34,7 @@ function getCookies() {
 function vipBuy(email, oldPrice, quantity) {
   const minus = quantity * -1;
   money(email, minus);
-  alert(`opertation started and it will take 5min...`);
+  alert(`operation started and it will take 5min...`);
   setTimeout(() => {
     const newPrice = Number(
       document.getElementsByClassName("buy-price form-control")[0].value
@@ -83,12 +83,12 @@ function vipSell(email, oldPrice, quantity) {
         cache: "no-cache",
       });
     } else if (oldPrice > newPrice) {
-      window.alert("Error!");
+      window.alert("Congratulation!");
       const plus = 0.9 * quantity;
       money(email, plus);
       alert(`${plus}$ add to ${email}`);
     } else {
-      window.alert("Error!");
+      window.alert(" sorry for your loss ,you can try again!");
     }
   }, 300000);
 }
@@ -138,9 +138,9 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
                 cache: "no-cache",
               });
             } else if (oldPrice > newPrice) {
-              window.alert("you made a mistake...");
+              window.alert("sorry for your loss ,you can try again");
             } else {
-              window.alert("you made money...");
+              window.alert("Congratulation, you made money...");
               const plus = quantity + 0.9 * quantity;
               money(email, plus);
               alert(`${plus}$ add to ${email}`);
@@ -150,7 +150,7 @@ document.getElementsByClassName("buy-btn")[0].onclick = async () => {
           vipBuy(email, oldPrice, quantity);
         }
       } else {
-        alert("m4 tamam");
+        alert("Check Your Balance Again");
       }
     });
 };
@@ -212,7 +212,7 @@ document.getElementsByClassName("sell-btn")[0].onclick = async () => {
           vipSell(email, oldPrice, quantity);
         }
       } else {
-        alert("m4 tamam");
+        alert("Check your balance again");
       }
     });
 };
