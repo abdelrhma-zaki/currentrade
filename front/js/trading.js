@@ -42,22 +42,22 @@ function vipBuy(email, oldPrice, quantity) {
 
     if (oldPrice == newPrice) {
       window.alert("Error!");
-      const amount = quantity;
-      fetch("api/account/update-balance", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, amount }),
-        cache: "no-cache",
-      });
+      //const amount = quantity;
+     // fetch("api/account/update-balance", {
+       // method: "POST",
+        //headers: {
+          //"Content-Type": "application/json",
+        //},
+        //body: JSON.stringify({ email, amount }),
+        //cache: "no-cache",
+      //});
     } else if (oldPrice > newPrice) {
       window.alert("Error!");
     } else {
       window.alert("Error!");
-      const plus = quantity + 0.9 * quantity;
-      money(email, amount)(plus);
-      alert(`${plus}$ add to ${email}`);
+     // const plus = quantity + 0.9 * quantity;
+      //money(email, amount)(plus);
+      //alert(`${plus}$ add to ${email}`);
     }
   }, 300000);
 }
@@ -73,20 +73,20 @@ function vipSell(email, oldPrice, quantity) {
 
     if (oldPrice == newPrice) {
       window.alert("Error!");
-      const amount = quantity;
-      fetch("api/account/update-balance", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, amount: minus }),
-        cache: "no-cache",
-      });
+      //const amount = quantity;
+      //fetch("api/account/update-balance", {
+        //method: "POST",
+        //headers: {
+          //"Content-Type": "application/json",
+        //},
+        //body: JSON.stringify({ email, amount: minus }),
+        //cache: "no-cache",
+      //});
     } else if (oldPrice > newPrice) {
       window.alert("Congratulation!");
-      const plus = 0.9 * quantity;
-      money(email, plus);
-      alert(`${plus}$ add to ${email}`);
+      //const plus = 0.9 * quantity;
+      //money(email, plus);
+      //alert(`${plus}$ add to ${email}`);
     } else {
       window.alert(" sorry for your loss ,you can try again!");
     }
